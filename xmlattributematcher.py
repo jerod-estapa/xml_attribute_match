@@ -5,7 +5,6 @@
 #Python 2.7.4
 
 import xml.etree.ElementTree as ET
-import csv
 
 #Puts inspection report numbers in a list
 codes = ['TX3YZ8HQE1X1', 'TX3YAEHQE15W', 'KS00YQ008857', 'TX43D99DAN33', 'NM3267100378',
