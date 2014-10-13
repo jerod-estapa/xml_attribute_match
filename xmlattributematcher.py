@@ -39,7 +39,9 @@ for x in codes:
             #print first_name, last_name, cdl_number
 
 
+#Open a file for writing
+csv_out = open('xmlmatch_report.csv', 'wb')
 
-
-            
+#Create the csv writer object
+mywriter = csv.writer(csv_out)
 
