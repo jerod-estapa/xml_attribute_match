@@ -5,8 +5,6 @@
 #Python 2.7.4
 
 import xml.etree.ElementTree as ET
-import csv
-import sys
 
 #Puts inspection report numbers in a list
 codes = ['CO2014001451','TX3YZ8HQE1X1','TX3YAEHQE15W','CO2013001399','LA0004746572',
@@ -27,7 +25,7 @@ for x in codes:
             first_name = primary_driver.attrib['first_name']
             last_name = primary_driver.attrib['last_name']
             cdl_number = primary_driver.attrib['License_number']
-            #print first_name, last_name, cdl_number
+            print first_name, last_name, cdl_number
 
     for node in tree.iter('crash'):
         if node.attrib['report_number'] == x:
@@ -36,12 +34,7 @@ for x in codes:
             first_name = driver.attrib['first_name']
             last_name = driver.attrib['last_name']
             cdl_number = driver.attrib['license_number']
-            #print first_name, last_name, cdl_number
+            print first_name, last_name, cdl_number
 
 
-#Open a file for writing
-csv_out = open('xmlmatch_report.csv', 'wb')
-
-#Create the csv writer object
-mywriter = csv.writer(csv_out)
 
