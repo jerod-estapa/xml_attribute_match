@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 import csv
 
 #prompts user to enter inspection codes
-codes = [str(x) for x in raw_input('Enter the inspection codes to search:').split()]
+codes = [str(x) for x in raw_input('Enter inspection codes to search:').split()]
 
 
 #parses the XML file and gets the root element
