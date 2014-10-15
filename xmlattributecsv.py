@@ -11,7 +11,7 @@ import csv
 codes = [str(x) for x in raw_input('Enter inspection codes to search:').split()]
 
 
-#parses the XML file and gets the root element
+#prompts user to enter XML filepath and parses to get the root element
 tree = ET.parse(raw_input('Enter XML file path to parse:'))
 
 
