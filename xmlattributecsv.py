@@ -7,14 +7,12 @@
 import xml.etree.ElementTree as ET
 import csv
 
-#puts inspection report numbers in a list
-codes = ['CO2014001451','TX3YZ8HQE1X1','TX3YAEHQE15W','CO2013001399','LA0004746572',
-         'CO2012001383','TX3LRAHQE1Q0','LALAGJ001256','AZ00YP000747','CO2C31000566',
-         'TX135U9DAK01','FL1619000314']
+#prompts user to enter inspection codes
+codes = [str(x) for x in raw_input('Enter the inspection codes to search:').split()]
 
 
 #parses the XML file and gets the root element
-tree = ET.parse("C:/Users/Jest2733/Desktop/Complio/USDOT_156275_All_BASICs_08-22-2014.xml")
+tree = ET.parse(raw_input('Enter XML file path to parse:'))
 
 
 #creates an empty list for the loops to populate
