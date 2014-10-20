@@ -6,5 +6,3 @@ All version take two input types:
   - The attributes to search
   - The location of the XML document
 
-xmlattributematcher.py - input is added directly in the code
-xmlattributecsv.py - input is added at the command prompt
