@@ -13,7 +13,7 @@ codes = ['CO2014001451','TX3YZ8HQE1X1','TX3YAEHQE15W','CO2013001399','LA00047465
 
 
 #Parses the XML file and gets the root element
-tree = ET.parse("C:/Users/Jest2733/Desktop/Complio/USDOT_156275_All_BASICs_08-22-2014.xml")
+tree = ET.parse("C:\Users\Jest2733\Desktop\Complio\Exceptions\USDOT_156275_All_BASICs_09-26-2014.xml")
 
 #Iterates through the list and the XML doc once, and uses set() to separate out only the necessary report numbers
 codes = set(codes)

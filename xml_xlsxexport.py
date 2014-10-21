@@ -5,7 +5,7 @@
 #Python 2.7.4
 
 import xml.etree.ElementTree as ET
-import csv
+import xlsxwriter
 
 #prompts user to enter inspection codes
 codes = [str(x) for x in raw_input('Enter inspection codes to search:').split()]
