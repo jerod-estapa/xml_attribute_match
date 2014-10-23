@@ -6,6 +6,8 @@
 
 import xml.etree.ElementTree as ET
 import xlsxwriter
+import easygui
+import sys
 
 #prompts user to enter inspection codes
 codes = [str(x) for x in raw_input('Enter inspection codes to search:').split()]
@@ -42,11 +44,3 @@ for x in codes:
             print first_name, last_name, cdl_number
 
 
-#open a file for writing, truncates file and populates with li[]
-with open('xmlmatch_report.csv', 'wb') as f:
-    f.truncate()
-    mywriter = csv.writer(f)
-    mywriter.writerows(li)
-
-#closes the file
-f.close()
