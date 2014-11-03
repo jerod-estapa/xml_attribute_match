@@ -6,16 +6,14 @@
 
 import xml.etree.ElementTree as ET
 import xlsxwriter
-import easygui
+import easygui as eg
 import sys
 
 #prompts user to enter inspection codes
-codes = [str(x) for x in raw_input('Enter inspection codes to search:').split()]
-
+codes = [str(x) for x in eg.enterbox(msg='Enter inspection codes to search:', strip=False).split()]
 
 #prompts user to enter XML file path and parses to get the root element
-tree = ET.parse(raw_input('Enter XML file path to parse:'))
-
+tree = ET.parse(eg.fileopenbox(msg='Select an XML file to parse:', filetypes='*.xml'))
 
 #creates an empty list for the loops to populate
 li = []
