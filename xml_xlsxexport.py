@@ -9,17 +9,19 @@ import xlsxwriter
 import easygui as eg
 import sys
 
-#prompts user to enter inspection codes
+#Prompts user to enter inspection codes
 codes = [str(x) for x in eg.enterbox(msg='Enter inspection codes to search:', strip=False).split()]
 
-#prompts user to enter XML file path and parses to get the root element
+#Prompts user to enter XML file path and parses to get the root element
 tree = ET.parse(eg.fileopenbox(msg='Select an XML file to parse:', filetypes='*.xml'))
 
-#creates an empty list for the loops to populate
+#Creates an empty list for the loops to populate
 li = []
 
-#iterates through the list and the XML doc once, and uses set() to separate out only the necessary report numbers
+#Iterates through the list and the XML doc once, and uses set() to separate out only the necessary report numbers
 codes = set(codes)
+
+#Nested loops to traverse the tree, find matching inspection codes and print associated first name, last name, cdl number
 for x in codes:
     for node in tree.iter('inspection'):
         if node.attrib['report_number'] == x:
@@ -42,3 +44,19 @@ for x in codes:
             print first_name, last_name, cdl_number
 
 
+#Creates a new workbook and worksheet
+workbook = xlsxwriter.Workbook('Exception_matches.xlsx')
+worksheet = workbook.add_worksheet()
+
+#Add formatting
+bold = workbook.add_format({'bold': 1})
+worksheet.write('A1', 'First Name', bold)
+worksheet.write('B1', 'Last Name', bold)
+worksheet.write('C1', 'CDL Number', bold)
+
+#Convert li[] tuples to strings and write to worksheet
+newlist = [str(a) for a in li]
+worksheet.write_row(0, 1, newlist)
+
+#Close workbook
+workbook.close()

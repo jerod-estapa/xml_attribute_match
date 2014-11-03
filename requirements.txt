@@ -1,0 +1,16 @@
+XlsxWriter==0.6.0
+argparse==1.2.1
+cssselect==0.9.1
+easygui==0.96
+lxml==3.3.6
+pyopenssl==0.14
+pypdf==1.13
+pyreadline==2.0
+queuelib==1.2.2
+six==1.7.3
+stevedore==0.15
+twisted==14.0.0
+virtualenv==1.11.4
+virtualenv-clone==0.2.5
+virtualenvwrapper==4.3.1
+w3lib==1.10.0
