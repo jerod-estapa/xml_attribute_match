@@ -7,7 +7,6 @@
 import xml.etree.ElementTree as ET
 import xlsxwriter
 import easygui as eg
-import sys
 
 #Prompts user to enter inspection codes
 codes = [str(x) for x in eg.enterbox(msg='Enter inspection codes to search:', strip=False).split()]
@@ -21,7 +20,7 @@ li = []
 #Iterates through the list and the XML doc once, and uses set() to separate out only the necessary report numbers
 codes = set(codes)
 
-#Nested loops to traverse the tree, find matching inspection codes and print associated first name, last name, cdl number
+#Nested loops to traverse the tree, find matching inspection codes, print associated first name, last name, cdl
 for x in codes:
     for node in tree.iter('inspection'):
         if node.attrib['report_number'] == x:
@@ -56,7 +55,7 @@ worksheet.write('C1', 'CDL Number', bold)
 
 #Convert li[] tuples to strings and write to worksheet
 newlist = [str(a) for a in li]
-worksheet.write_row(0, 1, newlist)
+worksheet.write_row(1, 0, newlist)
 
 #Close workbook
 workbook.close()
