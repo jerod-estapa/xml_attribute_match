@@ -6,8 +6,14 @@ All version take two input types:
   - The attributes to search
   - The location of the XML document
 
-xmlattributematcher.py - attributes must be entered straight into the code; results print to the terminal.
+xmlattributematcher.py
 ----------------------
-xmlattributecsv.py - attributes are entered and results are printed to the terminal.
+attributes must be entered straight into the code; results print to the terminal.
 
-xml_xlsxexport.py - utilizes easygui for input and xlsxwriter for results.
+xmlattributecsv.py
+------------------
+attributes are entered and results are printed to the terminal.
+
+xml_xlsxexport.py
+-----------------
+utilizes easygui for input and xlsxwriter for results.
