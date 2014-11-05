@@ -55,7 +55,7 @@ worksheet.write('C1', 'CDL Number', bold)
 
 #Convert li[] tuples to strings and write to worksheet
 newlist = [str(a) for a in li]
-worksheet.write_row(1, 0, newlist)
+worksheet.write_column(1, 0, newlist)
 
 #Close workbook
 workbook.close()
