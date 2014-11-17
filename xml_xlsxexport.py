@@ -11,7 +11,7 @@ import easygui as eg
 #Prompts user to enter inspection codes
 codes = [str(x) for x in eg.enterbox(msg='Enter inspection codes to search:', strip=False).split()]
 
-#Prompts user to enter XML file path and parses to get the root element
+#Prompts user to select XML file and parses to get the root element
 tree = ET.parse(eg.fileopenbox(msg='Select an XML file to parse:', filetypes='*.xml'))
 
 #Creates an empty list for the loops to populate
