@@ -1,7 +1,7 @@
 #!/usr/bin/python
-#XML Attribute CSV Generator
+#XML Attribute XLSX Generator
 #Parses an XML doc, matches unique attributes from a list to associated attributes in child elements,
-#and prints matching results to a CSV file
+#and prints matching results to a .xslx file
 #Python 2.7.4
 
 import xml.etree.ElementTree as ET
