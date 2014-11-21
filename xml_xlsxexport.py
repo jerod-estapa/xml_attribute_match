@@ -26,9 +26,18 @@ for x in codes:
         if node.attrib['report_number'] == x:
             primary_driver = [d for d in node.iter('driver') if d.attrib['driver_type'] == "Primary Driver"]
             primary_driver = primary_driver[0]
-            first_name = primary_driver.attrib['first_name']
-            last_name = primary_driver.attrib['last_name']
-            cdl_number = primary_driver.attrib['License_number']
+            try:
+                first_name = primary_driver.attrib['first_name']
+            except:
+                first_name = 'NA'
+            try:
+                last_name = primary_driver.attrib['last_name']
+            except:
+                last_name = 'NA'
+            try:
+                cdl_number = primary_driver.attrib['License_number']
+            except:
+                cdl_number = 'NA'
             li.append((first_name, last_name, cdl_number))
             print first_name, last_name, cdl_number
 
@@ -41,7 +50,6 @@ for x in codes:
             cdl_number = driver.attrib['license_number']
             li.append((first_name, last_name, cdl_number))
             print first_name, last_name, cdl_number
-
 
 #Creates a new workbook and worksheet
 workbook = xlsxwriter.Workbook('Exception_matches.xlsx')
