@@ -45,9 +45,18 @@ for x in codes:
         if node.attrib['report_number'] == x:
             driver = [d for d in node.iter('driver')]
             driver = driver[0]
-            first_name = driver.attrib['first_name']
-            last_name = driver.attrib['last_name']
-            cdl_number = driver.attrib['license_number']
+            try:
+                first_name = driver.attrib['first_name']
+            except:
+                first_name = 'NA'
+            try:
+                last_name = driver.attrib['last_name']
+            except:
+                last_name = 'NA'
+            try:
+                cdl_number = driver.attrib['license_number']
+            except:
+                cdl_number = 'NA'
             li.append((first_name, last_name, cdl_number))
             print first_name, last_name, cdl_number
 
